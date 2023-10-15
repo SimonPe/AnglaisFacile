@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anglais Facile - 3ième</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #word-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin-top: 60px; /* Pour éviter que le contenu soit masqué par la barre de navigation */
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+    
+        #word-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+    
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+    
+        p {
+            color: #666;
+            font-size: 18px;
+        }
+    
+        #translation {
+            width: 80%; /* Ajuster la largeur comme souhaité */
+            padding: 15px;
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            outline: none; /* Supprimer le contour par défaut de la case */
+            font-size: 20px;
+        }
+    
+        #check {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            margin-top: 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    
+        #check:hover {
+            background-color: #0056b3;
+        }
+    
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        /* Style de la barre de navigation */
+        .navbar {
+            background-color: #333; /* Couleur de fond de la barre de navigation */
+            overflow: hidden;
+        }
+
+        /* Style des liens de la barre de navigation */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Style des liens actifs de la barre de navigation */
+        .navbar a.active {
+            background-color: #007bff; /* Couleur de fond de l'onglet actif */
+            color: white;
+        }        
+
+        /* Style des liens de la barre de navigation au survol */
+        .navbar a:hover {
+            background-color: #ddd; /* Couleur de fond au survol */
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="word-container">
+        <h1>Test de Traduction</h1>
+        <p id="word">Word in English</p>
+        <input type="text" id="translation" placeholder="Entrez la traduction en français">
+        <button id="check">Vérifier</button>
+        <p id="result"></p>
+        <div class="navbar">
+            <a href="#" class="active">Accueil</a>
+            <a href="#">Traduction</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <script>
+        // Liste de mots en anglais et leurs traductions en français
+        const words = {
+            "apple": "pomme",
+            "banana": "banane",
+            "car": "voiture",
+            "coffin": "cercueil",
+            "grave": "tombe",
+            "bury": "enterrer",
+            "delighted": "ravie",
+            "down": "vers le bas",
+            "freeze to death": "mourir de froid",
+            "starve to death": "mourir de faim",
+            "dejected": "abattue",
+            "close up": "gros plan",
+            "at the top": "en haut",
+            "at the bottom": "en bas",
+            "on the right": "a droite",
+            "on the left": "a gauche",
+            "in the foreground": "au premier plan",
+            "in the background": "a l'arrière plan",
+            "over the years": "au cours des années",
+            "from 1939 to 1945": "de 1939 à 1945",
+            "widespread": "solide",
+            "unsolved": "non résolu",
+            "significant": "réel",
+            "ask": "demander",
+        };
+
+        const wordElement = document.getElementById("word");
+        const translationInput = document.getElementById("translation");
+        const checkButton = document.getElementById("check");
+        const resultElement = document.getElementById("result");
+
+        function getRandomWord() {
+            const randomIndex = Math.floor(Math.random() * Object.keys(words).length);
+            return Object.keys(words)[randomIndex];
+        }
+
+        function checkTranslation() {
+            const currentWord = wordElement.textContent;
+            const userTranslation = translationInput.value.trim().toLowerCase();
+            const actualTranslation = words[currentWord];
+
+            if (userTranslation === actualTranslation) {
+                resultElement.textContent = "Correct!";
+            } else {
+                resultElement.textContent = "Faux. La bonne réponse est " + actualTranslation;
+            }
+
+            setTimeout(() => {
+                const newWord = getRandomWord();
+                wordElement.textContent = newWord;
+                translationInput.value = "";
+                resultElement.textContent = "";
+            }, 2000);
+        }
+
+        checkButton.addEventListener("click", checkTranslation);
+
+        const initialWord = getRandomWord();
+        wordElement.textContent = initialWord;
+
+        translationInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                checkTranslation();
+            }
+        });
+    </script>
+</body>
+</html>
