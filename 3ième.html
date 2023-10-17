@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Anglais Facile - Accueil</title>
+    <title>Anglais Facile - 3ième</title>
     <style>
         body {
             display: flex;
@@ -140,42 +140,67 @@
 </head>
 <body>
     <div id="word-container">
-        <h1>Verbe Irrégulier</h1>
-        <button id="check">Commencer</button>
+        <h1>Test de Traduction</h1>
+        <p id="word">Word in English</p>
+        <input type="text" id="translation" placeholder="Entrez la traduction en français">
+        <button id="check">Vérifier</button>
         <p id="result"></p>
         <div class="navbar">
             <a href="#" class="active">Accueil</a>
             <a href="#">Mes Statistiques</a>
         </div>
     </div>
+
     <script>
         // Liste de mots en anglais et leurs traductions en français
         const words = {
             "apple": "pomme",
-            // ... (votre liste de mots)
+            "banana": "banane",
+            "car": "voiture",
+            "coffin": "cercueil",
+            "grave": "tombe",
+            "bury": "enterrer",
+            "delighted": "ravie",
+            "down": "vers le bas",
+            "freeze to death": "mourir de froid",
+            "starve to death": "mourir de faim",
+            "dejected": "abattue",
+            "close up": "gros plan",
+            "at the top": "en haut",
+            "at the bottom": "en bas",
+            "on the right": "a droite",
+            "on the left": "a gauche",
+            "in the foreground": "au premier plan",
+            "in the background": "a l'arrière plan",
+            "over the years": "au cours des années",
+            "from 1939 to 1945": "de 1939 à 1945",
+            "widespread": "solide",
+            "unsolved": "non résolu",
+            "significant": "réel",
+            "ask": "demander",
         };
-    
+
         const wordElement = document.getElementById("word");
         const translationInput = document.getElementById("translation");
+        const checkButton = document.getElementById("check");
         const resultElement = document.getElementById("result");
-        const checkButton = document.getElementById("check"); // Sélectionnez le bouton Commencer
-    
+
         function getRandomWord() {
             const randomIndex = Math.floor(Math.random() * Object.keys(words).length);
             return Object.keys(words)[randomIndex];
         }
-    
+
         function checkTranslation() {
             const currentWord = wordElement.textContent;
             const userTranslation = translationInput.value.trim().toLowerCase();
             const actualTranslation = words[currentWord];
-    
+
             if (userTranslation === actualTranslation) {
                 resultElement.textContent = "Correct!";
             } else {
                 resultElement.textContent = "Faux. La bonne réponse est " + actualTranslation;
             }
-    
+
             setTimeout(() => {
                 const newWord = getRandomWord();
                 wordElement.textContent = newWord;
@@ -183,21 +208,17 @@
                 resultElement.textContent = "";
             }, 2000);
         }
-    
-        // Rediriger vers "3ième.html" lorsque le bouton "Commencer" est cliqué
-        check.addEventListener("click", function () {
-            window.location.href = "3ième.html";
-        });
-    
+
+        checkButton.addEventListener("click", checkTranslation);
+
         const initialWord = getRandomWord();
         wordElement.textContent = initialWord;
-    
+
         translationInput.addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
                 checkTranslation();
             }
         });
     </script>
-    
 </body>
 </html>
