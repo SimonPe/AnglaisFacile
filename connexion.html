@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Anglais Facile - 3ième</title>
+    <title>Anglais Facile - Connexion</title>
     <style>
         body {
             display: flex;
@@ -140,10 +140,12 @@
 </head>
 <body>
     <div id="word-container">
-        <h1>Test de Traduction</h1>
-        <p id="word">Word in English</p>
-        <input type="text" id="translation" placeholder="Entrez la traduction en français">
-        <button id="check">Vérifier</button>
+        <h1>Connexion</h1>
+        <form action="process_connexion.php" method="post">
+            <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button id="check" type="submit">Se connecter</button>
+        </form>
         <p id="result"></p>
         <div class="navbar">
             <a href="index.html" class="active">Accueil</a>
