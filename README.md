@@ -27,7 +27,7 @@ Les cours eux-mêmes sont parmi les meilleurs !
 
 # Communauté
 
-- Nous avons un serveur Discord ! [![Discord](https://img.shields.io/discord/975335554721910824.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)] Cela devrait être votre premier arrêt pour discuter avec d’autres étudiants de d'anglais ou de Developpeur.
+- Nous avons un serveur Discord ! [discord.gg/Uu5uQ8rNKc] Cela devrait être votre premier arrêt pour discuter avec d’autres étudiants de d'anglais ou de Developpeur.
 
 # Programme d'études
 
