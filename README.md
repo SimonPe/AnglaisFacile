@@ -27,7 +27,7 @@ Les cours eux-mêmes sont parmi les meilleurs !
 
 # Communauté
 
-- Nous avons un serveur Discord ! [![Discord](https://img.shields.io/discord/744385009028431943.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/wuytwK5s9h) Cela devrait être votre premier arrêt pour discuter avec d’autres étudiants de l’OSSU. Pourquoi ne te présente-tu pas maintenant ? [Rejoignez le Discord OSSU]([https://discord.gg/wuytwK5s9h](https://discord.gg/Uu5uQ8rNKc))
+- Nous avons un serveur Discord ! [![Discord](https://img.shields.io/discord/975335554721910824.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2) Cela devrait être votre premier arrêt pour discuter avec d’autres étudiants de l’OSSU. Pourquoi ne te présente-tu pas maintenant ? [Rejoignez le Discord OSSU]([https://discord.gg/wuytwK5s9h](https://discord.gg/Uu5uQ8rNKc))
 - Vous pouvez également interagir via les tickets GitHub. S’il y a un problème avec un cours ou si une modification doit être apportée au programme, c’est l’endroit idéal pour entamer la conversation. En savoir plus [ici] (CONTRIBUTING.md).
 - Abonnez-vous à notre [newsletter](https://tinyletter.com/OpenSourceSocietyUniversity).
 - Ajoutez **Open Source Society University** à votre profil [Linkedin](https://www.linkedin.com/school/11272443/) !
