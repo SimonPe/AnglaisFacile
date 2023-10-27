@@ -2,9 +2,6 @@
 <p align="center">
   Chemin vers une formation autodidacte gratuite en Anglais !
 </p>
- <img alt=">Anglais Facile Open Source" src="https://img.shields.io/badge/Anglais%20Facile-Furio360-blue.svg">
-  </a>
-</p>
 
 # Contenue
 
