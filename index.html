@@ -42,53 +42,36 @@
             color: black;
         }
 
-        #word-container {
-            text-align: center;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            margin-top: 60px; /* Pour éviter que le contenu soit masqué par la barre de navigation */
-        }
-        body {
+        .word-container-wrapper {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
+            justify-content: space-between;
+            margin-top: 60px;
         }
-    
-        #word-container {
+
+        .word-container {
             text-align: center;
             background-color: #fff;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 48%; /* Ajuster la largeur comme souhaité */
         }
-    
+
+        .word-container:not(:last-child) {
+            margin-right: 4%; /* Espace entre les deux cases */
+        }
+
         h1 {
             color: #333;
             font-size: 24px;
         }
-    
+
         p {
             color: #666;
             font-size: 18px;
         }
-    
-        #translation {
-            width: 80%; /* Ajuster la largeur comme souhaité */
-            padding: 15px;
-            margin-top: 20px;
-            border: 2px solid #ccc;
-            border-radius: 6px;
-            outline: none; /* Supprimer le contour par défaut de la case */
-            font-size: 20px;
-        }
-    
-        #check {
+
+        .check-btn {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -98,23 +81,22 @@
             cursor: pointer;
             font-size: 20px;
         }
-    
-        #check:hover {
+
+        .check-btn:hover {
             background-color: #0056b3;
         }
-    
+
         #result {
             font-weight: bold;
             margin-top: 20px;
             font-size: 24px;
         }
-        /* Style de la barre de navigation */
+
         .navbar {
-            background-color: #333; /* Couleur de fond de la barre de navigation */
+            background-color: #333;
             overflow: hidden;
         }
 
-        /* Style des liens de la barre de navigation */
         .navbar a {
             float: left;
             display: block;
@@ -125,34 +107,43 @@
             font-size: 18px;
         }
 
-        /* Style des liens actifs de la barre de navigation */
         .navbar a.active {
-            background-color: #007bff; /* Couleur de fond de l'onglet actif */
+            background-color: #007bff;
             color: white;
-        }        
+        }
 
-        /* Style des liens de la barre de navigation au survol */
         .navbar a:hover {
-            background-color: #ddd; /* Couleur de fond au survol */
+            background-color: #ddd;
             color: black;
         }
     </style>
 </head>
 <body>
-    <div id="word-container">
-        <h1>Programme de 3ième</h1>
-        <button id="check">Commencer</button>
-        <p id="result"></p>
-        <div class="navbar">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="#">Mes Statistiques</a>
+    <div class="navbar">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="#">Mes Statistiques</a>
+    </div>
+
+    <div class="word-container-wrapper">
+        <div class="word-container">
+            <h1>Entrainement 3ème</h1>
+            <button class="check-btn">Commencer</button>
+            <p id="result"></p>
+        </div>
+
+        <div class="word-container">
+            <h1>Verbes Irréguliées</h1>
+            <button class="check-btn">Commencer</button>
+            <p id="result"></p>
         </div>
     </div>
+
     <script>
-        check.addEventListener("click", function () {
-            window.location.href = "3ième.html";
+        document.querySelectorAll('.check-btn').forEach(function(btn) {
+            btn.addEventListener("click", function () {
+                window.location.href = "3ième.html";
+            });
         });
     </script>
-    
 </body>
 </html>
