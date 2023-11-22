@@ -149,53 +149,8 @@
         </div>
     </div>
     <script>
-        // Liste de mots en anglais et leurs traductions en français
-        const words = {
-            "apple": "pomme",
-            // ... (votre liste de mots)
-        };
-    
-        const wordElement = document.getElementById("word");
-        const translationInput = document.getElementById("translation");
-        const resultElement = document.getElementById("result");
-        const checkButton = document.getElementById("check"); // Sélectionnez le bouton Commencer
-    
-        function getRandomWord() {
-            const randomIndex = Math.floor(Math.random() * Object.keys(words).length);
-            return Object.keys(words)[randomIndex];
-        }
-    
-        function checkTranslation() {
-            const currentWord = wordElement.textContent;
-            const userTranslation = translationInput.value.trim().toLowerCase();
-            const actualTranslation = words[currentWord];
-    
-            if (userTranslation === actualTranslation) {
-                resultElement.textContent = "Correct!";
-            } else {
-                resultElement.textContent = "Faux. La bonne réponse est " + actualTranslation;
-            }
-    
-            setTimeout(() => {
-                const newWord = getRandomWord();
-                wordElement.textContent = newWord;
-                translationInput.value = "";
-                resultElement.textContent = "";
-            }, 2000);
-        }
-    
-        // Rediriger vers "3ième.html" lorsque le bouton "Commencer" est cliqué
         check.addEventListener("click", function () {
             window.location.href = "3ième.html";
-        });
-    
-        const initialWord = getRandomWord();
-        wordElement.textContent = initialWord;
-    
-        translationInput.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") {
-                checkTranslation();
-            }
         });
     </script>
     
