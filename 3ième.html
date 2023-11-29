@@ -184,6 +184,10 @@
         const translationInput = document.getElementById("translation");
         const checkButton = document.getElementById("check");
         const resultElement = document.getElementById("result");
+        const maxAttempts = 20; // Limite le nombre de mots à 20
+        let attempts = 0; // Compteur d'essais
+        let correctAnswers = 0; // Nombre de réponses correctes
+        let testComplete = false;
 
         function getRandomWord() {
             const randomIndex = Math.floor(Math.random() * Object.keys(words).length);
@@ -191,22 +195,36 @@
         }
 
         function checkTranslation() {
+            if (testComplete) {
+                return; // Ne rien faire si le test est déjà terminé
+            }
+
             const currentWord = wordElement.textContent;
             const userTranslation = translationInput.value.trim().toLowerCase();
             const actualTranslation = words[currentWord];
 
+            attempts++;
+
             if (userTranslation === actualTranslation) {
+                correctAnswers++;
                 resultElement.textContent = "Correct!";
             } else {
-                resultElement.textContent = "Faux. La bonne réponse est " + actualTranslation;
+                resultElement.textContent = `Faux. La bonne réponse est ${actualTranslation}`;
             }
 
-            setTimeout(() => {
+            if (attempts < maxAttempts) {
                 const newWord = getRandomWord();
                 wordElement.textContent = newWord;
                 translationInput.value = "";
-                resultElement.textContent = "";
-            }, 2000);
+            } else {
+                testComplete = true;
+                const successRate = (correctAnswers / maxAttempts) * 100;
+                resultElement.textContent = `Test terminé. Votre note est ${successRate.toFixed(2)} sur 100.`;
+                setTimeout(function () {
+                    // Rediriger vers index.html après 10 secondes
+                    window.location.href = "index.html";
+                }, 10000);
+            }
         }
 
         checkButton.addEventListener("click", checkTranslation);
@@ -221,4 +239,5 @@
         });
     </script>
 </body>
+
 </html>
