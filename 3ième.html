@@ -171,14 +171,35 @@
             "on the right": "a droite",
             "on the left": "a gauche",
             "in the foreground": "au premier plan",
-            "in the background": "a l'arrière plan",
+            "in the background": "à l'arrière plan",
             "over the years": "au cours des années",
             "from 1939 to 1945": "de 1939 à 1945",
             "widespread": "solide",
             "unsolved": "non résolu",
             "significant": "réel",
             "ask": "demander",
+            "they bet on a dog": "ils ont parier sur un chien",
+            "down and out": "à la rue",
+            "completely broke": "complètement fauché",
+            "have debts": "avoir des dettes",
+            "homeless": "sans abri",
+            "refound": "rembourser",
+            "borrow money from": "emprunter de l'argent",
+            "be desesperate for": "être désespéré pour",
+            "need": "besoin",
+            "coat": "manteau",
+            "in front of the wall": "en face du mur",
+            "music troupe": "troupe de music",
+            "meet": "rencontrer",
+            "ice cubes": "glaçons",
+            "it's forbidden": "c'est interdit",
+            "he says it's his": "il dit que c'est à lui",
+            "otherwise": "sinon",
+            "prentend to": "faire semblant de",
+            "another person rich": "une autre personne riche",
+            "picture": "image"
         };
+
 
         const wordElement = document.getElementById("word");
         const translationInput = document.getElementById("translation");
@@ -218,8 +239,8 @@
                 translationInput.value = "";
             } else {
                 testComplete = true;
-                const successRate = (correctAnswers / maxAttempts) * 100;
-                resultElement.textContent = `Test terminé. Votre note est ${successRate.toFixed(2)} sur 100.`;
+                const successRate = Math.round((correctAnswers / maxAttempts) * 100);
+                resultElement.textContent = `Test terminé. Votre note est ${successRate} sur 100.`;
                 setTimeout(function () {
                     // Rediriger vers index.html après 10 secondes
                     window.location.href = "index.html";
